@@ -1,43 +1,39 @@
-import React from 'react'
-import logo from '../assets/react.svg'
-import '../components/Navbar.css'
-// import menu from '../assets/menu.png'
+import React, { useState } from 'react';
+import './Navbar.css'; // We'll create this CSS file next
+import Image from '../assets/Q.png';
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+  const handleMenuClick1 = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <>
-    <nav class="navbar">
-      <div class="logo-image">
-        <a href="index.html"><img src={logo} alt="logo"/></a>
+    <nav className="navbar">
+      <div className="menu-logo-container">
+      <div className="circle-background" onClick={handleMenuClick1}></div>
+      <div className="menu-logo" onClick={handleMenuClick}>
+        ☰
       </div>
-      <div class="navbar-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      
+    </div>
+    <div className='image-logo'>
+        <img src={Image} alt="Quiz" />
       </div>
-      <div class="navbar-nav" id="nav-links">
-        <ul>
-          <li>
-            Home
-          </li>
-          <li>
-            About Us
-          </li>
-          <li>
-            Social
-          </li>
-          <li>
-            Contact Us
-          </li>
-        </ul>
-      </div>
+      {menuOpen && (
+        <div className="menu-items">
+          <a href="#home" className="menu-item">Home</a>
+          <a href="#about" className="menu-item">About</a>
+          <a href="#contact" className="menu-item">Contact</a>
+          <div className="animation start-home"></div>
+        </div>
+      )}
     </nav>
-    </>
-  )
-}
+  );
+};
 
-export default Navbar
-
-
-
-
-
+export default Navbar;

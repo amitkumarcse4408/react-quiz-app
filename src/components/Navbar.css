@@ -1,106 +1,143 @@
-/* Main Styles */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* Main Styles */
 .navbar {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
-  background-color: #1a6574;
-  padding: 10px 20px;
-  box-sizing: border-box;
+  padding: 10px;
+  /* background-color: #d11414; */
+  color: white;
+  position: relative;
+}
+.menu-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.circle-background {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(4, 4, 4) ;
+  border-radius: 50%;
+  margin-left: 5px;
+  animation: moveBackForth 1.2s infinite;
+}
+@keyframes moveBackForth {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.logo-image {
-  /* margin-right: 30px;  */
-  margin-left: 20px;
+.menu-logo {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  position: relative;
+  margin-left: 17px;
+  cursor: pointer;
+  animation: moveBackForth1 1.3s infinite;
+  
+}
+@keyframes moveBackForth1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* .menu-logo:after{
+  content: '';
+  background-color: aqua;
+  height: 50px;
+  width: 50px;
+} */
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 58px;
+  left: 0px;
+  background-color: #ffffff;
+  width: 30%;
   
 }
 
-.logo-image img {
-  height: 50px; /* Adjust the logo size as needed */
-  border-radius: 8px;
-}
-
-.navbar-nav {
-  display: flex;
-  flex-grow: 1;
-  margin-right: 30px; /* Adjust the value to your desired space */
-}
-.navbar-nav ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.navbar-nav li {
-  margin: 0 18px;
-  display: flex;
-  align-items: center;
-
-}
-
-.navbar-nav li {
-  color: white;
+.menu-item {
+  color: rgb(7, 7, 7);
+  padding: 10px 5px;
+  font-weight: 500;
   text-decoration: none;
 }
-.navbar .logo-image {
-  margin-right: 50px; /* Adjust the value to your desired space */
-}
 
-
-.navbar .navbar-nav form{
-  display: flex;
-}
-.navbar .navbar-nav form button{
-  color: yellow;
-  border-color: yellow
-}
-.navbar-nav ul form button:hover {
-  background-color:rgb(21, 196, 193);
-  color:rgb(225, 11, 11); ;
-
-  /* border-radius: 4px; */
-}
-
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.bar {
-  height: 3px;
-  width: 20px;
-  background-color: white;
-  margin: 4px 10px;
-  transition: 0.4s;
-}
-
-@media (max-width: 768px) {
-  .navbar-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #333;
+@media (max-width: 767px) {
+  .menu-items {display: flex;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    top: 65px;
+    gap: 1.5rem;
+    font-weight: 500;
+    background-color: rgb(230, 217, 217);
+    z-index: 1;
+  }
+  nav .animation{
     position: absolute;
-    top: 60px;
-    left: 0;
+    height: 100%;
+    z-index: -1;
+    background: aqua;
+    width: 80px;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+  }
+  a:nth-child(1){
+    width: 100px;
+  }
+  nav .start-home, a:nth-child(1):hover~.animation{
+    width: 100px;
+    left: 0px;
+  }
+  a:nth-child(2){
+    width: 120px;
+  }
+  nav .start-home, a:nth-child(2):hover~.animation{
+    width: 120px;
+    left: 100px;
+  }
+  a:nth-child(3){
+    width: 190px;
+  }
+  nav .start-home, a:nth-child(3):hover~.animation{
+    width: 190px;
+    left: 240px;
   }
 
-  .navbar-nav ul {
-    flex-direction: column;
+}
+.image-logo img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  border-radius: 50%;
+  animation: moveBackForth1 1.3s infinite;
+}
+@keyframes moveBackForth1 {
+  0% {
+    transform: translateX(0);
   }
-
-  .navbar-nav li {
-    margin: 10px 0;
-    text-align: center;
+  50% {
+    transform: translateX(10px);
   }
-
-  .navbar-toggle {
-    display: flex;
+  100% {
+    transform: translateX(0);
   }
 }

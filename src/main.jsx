@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Navbar from './components/Nav.jsx'
+// import Navbar from './components/Nav.jsx'
 import Card from './components/CardMenu.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
